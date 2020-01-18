@@ -72,9 +72,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .home {
-  margin-top: 3em;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 3em auto;
 }
 .routeDiv {
   margin: 1em 0 0.6em 0;
