@@ -27,12 +27,6 @@
       <div class="routeLink" @click="changeRoute('Projects')">
         <u>My Projects</u>
       </div>
-
-      <!--
-      <div class="routeDiv col-2" @click="changeRoute('Contact')"> 
-        Contact Me
-      </div>
-      -->
     </div>
 
     <p class="mediaParagraph">
@@ -85,7 +79,6 @@
   font-size: 42px;
 }
 p {
-  font-family: 'Nunito', sans-serif;
   font-size: 35px;
 }
 .highlight {
