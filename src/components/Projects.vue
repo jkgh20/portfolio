@@ -2,6 +2,18 @@
   <div class="projectsBody">
     <Sidenav></Sidenav>
 
+    <ProjectDetails 
+      v-for="project in projectItems"
+      v-bind:key="`${project.name}-details`"
+      :ref = "project.name + 'modal'"
+      v-bind:name = "project.name"
+      v-bind:desc = "project.desc"
+      v-bind:info = "project.info"
+      v-bind:tech = "project.tech"
+      v-bind:imgUrl = "project.imgUrl"
+      v-bind:projectLinks = "project.projectLinks"
+    ></ProjectDetails>
+
     <div class="content">
       <div class="projectsPageHeader">
         <h2>Projects.</h2>
@@ -11,7 +23,8 @@
       <div class="projectItemDiv" 
         v-for="project in projectItems" 
         v-bind:style='{ backgroundImage: `url("${project.imgUrl}")` }'
-        v-bind:key="project.name">
+        v-bind:key="`${project.name}-projectItem`"
+        @click="openModal(`${project.name}modal`)">
         <div class="projectDivTitle">
           {{project.name}}
         </div>
@@ -25,17 +38,6 @@
             </div>
           </div>
         </div>
-
-        <!--
-        <ProjectDetails
-          v-bind:name = "project.name"
-          v-bind:desc = "project.desc"
-          v-bind:info = "project.info"
-          v-bind:tech = "project.tech"
-          v-bind:imgUrl = "project.imgUrl"
-          v-bind:projectLinks = "project.projectLinks"
-        ></ProjectDetails>
-        -->
       </div>
     </div>
 
@@ -47,13 +49,13 @@
 
 <script>
   import Sidenav from './Sidenav.vue';
-  //import ProjectDetails from'./ProjectDetails.vue';
+  import ProjectDetails from'./ProjectDetails.vue';
 
   export default {
     name: 'Projects',
     components: {
       Sidenav,
-      //ProjectDetails
+      ProjectDetails
     },
     data () {
       return {
@@ -61,7 +63,7 @@
           {
             name: 'Otherside',
             desc: 'Spotify playlist generator based on live shows in various locations',
-            info: "<p>Whenever I find a new artist I like - whether from a local show or a music festival, I love going on a music binge-spree for the next week or so, and adding them to my eternal music collection. Of course I'm not the only one that does this, but I definitely love discoverinig new music! Now, there are shows all across the US - and there's only one of me. How can I discover new artists playing shows if I'm not there?</p> <p>Otherside (rightfully named after the Red Hot Chili Pepper's hit song) aims to help me, and others like me out by consolidating songs based on live shows happening today across the US, and putting them into a Spotify playlist. It makes use of the Spotify and Seatgeek APIs to accomplish this task. It's simple - just pick some cities, pick some genres, log in and build a playlst.</p>",
+            info: "<p>Whenever I find a new artist I like - whether from a local show or a music festival, I love going on a music binge-spree for the next week or so, and adding them to my eternal music collection. Of course I'm not the only one that does this, but I definitely love discoverinig new music! Now, there are shows all across the US - and there's only one of me. How can I discover new artists playing shows if I'm not there?</p> <p>Otherside (rightfully named after the Red Hot Chili Pepper's hit song) aims to help me, and others like me out by consolidating songs based on live shows happening today across the US, and putting them into a Spotify playlist. It makes use of the Spotify and Seatgeek APIs to accomplish this task. It's simple - just pick some cities, pick some genres, log in and build a playlist.</p>",
             tech: ['Go', 'Redis', 'JavaScript/TypeScript', 'Vue', 'Jest'],
             imgUrl: require('../assets/otherside.png'),
             projectLinks: [
@@ -114,8 +116,12 @@
     },
     mounted () {
       window.scrollTo(0,0);
-      
     },
+    methods: {
+      openModal(refName) {
+        this.$refs[refName][0].show();
+      }
+    }
   }
 </script>
 
@@ -127,7 +133,7 @@
   height: 100%;
 }
 .projectsPageHeader {
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 }
 .content {
   border-left: 5px solid rgb(142, 210, 222, 0.5);
@@ -245,6 +251,27 @@ p {
   }
   p { 
     font-size: 35px;
+  }
+}
+@media (max-width: 475px) {
+  .projectItemDiv {
+    font-size: 35px;
+    height: 6em;
+    margin-bottom: 0.5em;
+  }
+  .projectDivTitle {
+    margin-top: 1.5em;
+  }
+}
+@media (max-width: 400px) {
+  .projectItemDiv {
+    font-size: 23px;
+    height: 4em;
+    margin-bottom: 0.5em;
+    width: 13em;
+  }
+  .projectDivTitle {
+    margin-top: 0.5em;
   }
 }
 </style>
