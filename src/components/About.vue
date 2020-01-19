@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-
     <Sidenav></Sidenav>
-
     <div class="content">
       <div class="tempHeaderDiv">
         <transition name="slide-down">
