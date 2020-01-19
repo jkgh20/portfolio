@@ -74,7 +74,7 @@
           },
           {
             name: 'Rooster',
-            desc: 'Daily dashboard web application to display weather, commute and calendar info',
+            desc: 'Daily dashboard to display weather, commute and calendar info',
             info: "<p>Our time in the morning is precious - every second counts! I'll find myself checking the weather, what meetings/obligations I have for the day, and even my commute - maybe there's a traffic jam on the highway and I should go a different route? Routine is great, but is there a way I can see everything I need in the morning and save some time?</p><p>Rooster is a web application that consolidates all this information for me, taking weather data from the Dark Sky API, checking commute times from the Bing Distance API, and calendar information from the google calendar API. It lets the user configure what they want to see, and how they want to see it. </p>",
             tech: ['C#', 'MongoDB', 'JavaScript/TypeScript', 'Angular', 'NUnit'],
             imgUrl: require('../assets/rooster.png'),
