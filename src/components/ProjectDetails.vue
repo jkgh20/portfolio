@@ -1,29 +1,31 @@
 <template>
-  <div class="projectDetails" v-if="showModal">
-    <button class="closeButton" @click="hide()">
-        X
-    </button>
+  <transition name="fade">
+    <div class="projectDetails" v-if="showModal">
+        <button class="closeButton" @click="hide()">
+            X
+        </button>
 
-    <h2 class="header">{{name}}</h2>
-    <h3 class="subheader">{{desc}}.</h3>
-    <div class="techItemDiv">
-        <div class="techItem" v-for="item in tech" v-bind:key="`${item}-modal`">
-            {{item}}
+        <h2 class="header">{{name}}</h2>
+        <h3 class="subheader">{{desc}}.</h3>
+        <div class="techItemDiv">
+            <div class="techItem" v-for="item in tech" v-bind:key="`${item}-modal`">
+                {{item}}
+            </div>
         </div>
+
+        <div class="info" v-html="info"></div>
+
+        <h4 class="link" v-for="link in projectLinks" v-bind:key="link.name">
+            <a :href="link.url" target="_blank">{{link.name}}</a>
+        </h4>
+
+        <p class="closeLink" @click="hide()">close</p>
+
+        <br/>
+        <br/>
+        <br/>
     </div>
-
-    <div class="info" v-html="info"></div>
-
-    <h4 class="link" v-for="link in projectLinks" v-bind:key="link.name">
-        <a :href="link.url" target="_blank">{{link.name}}</a>
-    </h4>
-
-    <p class="closeLink" @click="hide()">close</p>
-
-    <br/>
-    <br/>
-    <br/>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -55,6 +57,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 .projectDetails {
     z-index: 1;
     position: fixed;

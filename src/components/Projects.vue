@@ -15,10 +15,12 @@
     ></ProjectDetails>
 
     <div class="content">
-      <div class="projectsPageHeader">
-        <h2>Projects.</h2>
-        <p>A collection of my personal works. Enjoy!</p>
-      </div>
+      <transition name="slide-down">
+        <div class="projectsPageHeader" v-if="showHeader">
+          <h2>Projects.</h2>
+          <p>A collection of my personal works. Enjoy!</p>
+        </div>
+      </transition>
       
       <div class="projectItemDiv" 
         v-for="project in projectItems" 
@@ -73,7 +75,7 @@
           {
             name: 'Rooster',
             desc: 'Daily dashboard web application to display weather, commute and calendar info',
-            info: "",
+            info: "<p>Our time in the morning is precious - every second counts! I'll find myself checking the weather, what meetings/obligations I have for the day, and even my commute - maybe there's a traffic jam on the highway and I should go a different route? Routine is great, but is there a way I can see everything I need in the morning and save some time?</p><p>Rooster is a web application that consolidates all this information for me, taking weather data from the Dark Sky API, checking commute times from the Bing Distance API, and calendar information from the google calendar API. It lets the user configure what they want to see, and how they want to see it. </p>",
             tech: ['C#', 'MongoDB', 'JavaScript/TypeScript', 'Angular', 'NUnit'],
             imgUrl: require('../assets/rooster.png'),
             projectLinks: [
@@ -83,7 +85,7 @@
           {
             name: 'Clairvoyance',
             desc: 'Desktop app to keep track of daily and weekly hours spent on different tasks',
-            info: "",
+            info: "<p>At the end of every work week, many people get the absolute please of putting tasks into their timecard. During my time at National Instruments, I personally got to enjoy twice the amount - those for the general HR entries, and those for our entries into Microsoft Azure. It might take me 15 minutes every week to scramble through my notes and calendar just for this task.</p><p>By creating Clairvoyance, I was able to enter tasks into one place as I did them, and forget about them until Friday. Then I pull up my generated time report and - type type type - I'm done with my work week!</p>",
             tech: ['C#/WPF', 'SQL Server', 'MSTest'],
             imgUrl: require('../assets/clairvoyance.png'),
             projectLinks: [
@@ -93,7 +95,7 @@
           {
             name: 'Kolibri',
             desc: 'Open source project that delivers online education to low-resource communities',
-            info: "",
+            info: "<p>Kolibri is an offline app that lets users download educational material (e.g. Khan Academy courses) and share them with others. This makes it especially useful in low-resource communitites like rural schools, orphanages, and prisons. Inspired by their mission of making education more widely available, I started conributing to the app, primarily on the UX.</p>",
             tech: ['Python/Django', 'SQL', 'JavaScript/TypeScript', 'Vue', 'Jest'],
             imgUrl: require('../assets/kolibri.png'),
             projectLinks: [
@@ -104,18 +106,20 @@
           {
             name: 'Jenkins.io LabVIEW Tutorial',
             desc: 'Tutorial to set up a Continuous Integration system with Jenkins, LabVIEW, and GitHub',
-            info: "",
+            info: "<p>LabVIEW is a graphical programming language that doesn't lend itself perfectly to every modern software engineering practice. Many of our (National Instrument's) biggest customers were interested in using CI with LabVIEW, but had no idea how or if it was even possible.</p><p>I worked with many teams across my company including Marketing and R&D to consolidate the best practices to use LabVIEW with Jenkins, and came up with this nifty tutorial I published onto the Jenkins.io site.</p>",
             tech: ['Jenkins', 'LabVIEW'],
             imgUrl: require('../assets/jenkins-labview.png'),
             projectLinks: [
               {name: 'Tutorial', url: 'https://jenkins.io/doc/tutorials/build-a-labview-app/'}
             ]
           },
-        ]
+        ],
+        showHeader: null
       }
     },
     mounted () {
       window.scrollTo(0,0);
+      this.showHeader = true;
     },
     methods: {
       openModal(refName) {
@@ -143,6 +147,16 @@
   text-align: left;
   height: auto;
   width: auto;
+}
+.slide-down-enter-active {
+  transition: all 1s ease;
+}
+.slide-down-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-down-enter, .slide-down-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }
 h2 {
   font-size: 80px;
