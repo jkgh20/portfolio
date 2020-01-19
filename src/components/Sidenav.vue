@@ -21,13 +21,13 @@
 
         <div class="mediaLinkDiv">
             <div class="mediaLink">
-                <a href="https://www.linkedin.com/in/brandondtnguyen">
+                <a href="https://www.linkedin.com/in/brandondtnguyen" target="_blank">
                 <img alt="LinkedIn" class="linkedin-icon" src="../assets/LI-Icon.png">
                 </a>
             </div>
 
             <div class="mediaLink">
-                <a href="https://github.com/bransgithub/">
+                <a href="https://github.com/bransgithub/" target="_blank">
                 <img alt="GitHub" class="github-icon" src="../assets/GH-Icon.png">
                 </a>
             </div>
