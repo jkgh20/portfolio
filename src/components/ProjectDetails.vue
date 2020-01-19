@@ -1,5 +1,4 @@
 <template>
-  <transition name="fade">
     <div class="projectDetails" v-if="showModal">
         <button class="closeButton" @click="hide()">
             X
@@ -25,7 +24,6 @@
         <br/>
         <br/>
     </div>
-  </transition>
 </template>
 
 <script>
