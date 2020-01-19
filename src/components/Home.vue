@@ -59,6 +59,9 @@
       changeRoute(path) {
         this.$router.push(path);
       }
+    },
+    mounted () {
+      window.scrollTo(0,0);
     }
   }
 </script>
