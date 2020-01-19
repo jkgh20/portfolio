@@ -138,6 +138,7 @@ a {
   margin-left: 22em;
   padding-left: 1em;
   padding-right: 15em;
+  margin-bottom: 80px;
   text-align: left;
   height: auto;
   width: auto;
