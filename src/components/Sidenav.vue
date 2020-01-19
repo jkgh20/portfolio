@@ -121,7 +121,7 @@
         font-size: 30px;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     .sidenav {
         width: 11em;
     }

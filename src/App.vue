@@ -42,4 +42,9 @@ export default {
   font-size: 24px;
   height: 200vh;
 }
+@media (max-height:736px) {
+  #app {
+    margin-top: 30px;
+  }
+}
 </style>

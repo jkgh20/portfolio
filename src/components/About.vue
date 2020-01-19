@@ -11,7 +11,7 @@
       </div>
 
       <transition name="slide-down">
-        <div class="introSection" v-if="bodySections[0]">
+        <div class="introSection transitionDiv" v-if="bodySections[0]">
           <p>My name is Brandon, and I'm a full stack developer in Austin, TX. 
             I hail from the mountainous lands of Virginia, where I graduated from Virginia Tech 
             with a degree in Mechanical Engineering.</p>
@@ -21,7 +21,7 @@
       </transition>
 
       <transition name="slide-down">
-        <div class="technologySection" v-if="bodySections[1]">
+        <div class="technologySection transitionDiv" v-if="bodySections[1]">
           <p>
             Here are some of the technologies I'm familiar with:
           </p>
@@ -34,13 +34,13 @@
       </transition>
 
       <transition name="slide-down">
-        <div class="outroSection" v-if="bodySections[2]">
+        <div class="outroSection transitionDiv" v-if="bodySections[2]">
           <p>
             In my free time, other than coding, I enjoy playing guitar, psychology books, and going to music and comedy shows.
             I also try to surf and snowboard when I can, but it's not always easy because you know... Texas.
           </p>
           <p>
-            Want to get in touch? You can reach me at <a href="mailto:brandon.dt.nguyen@gmail.com">brandon.dt.nguyen@gmail.com</a>. I'll respond as soon as possible.
+            Want to get in touch? You can reach me at <a class="mailToLink" href="mailto:brandon.dt.nguyen@gmail.com">brandon.dt.nguyen@gmail.com</a>. I'll respond as soon as possible.
             In the meantime, why not check out some of my <span class="projectsLink" @click="changeRoute('Projects')">personal projects</span>? 
           </p>
         </div>
@@ -121,8 +121,8 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .about {
-  margin: 3em auto 3em 0;
-  width: 90%;
+  margin: 0 auto 3em 0;
+  width: auto;
   height: 100%;
 }
 p {
@@ -137,9 +137,10 @@ a {
   border-left: 5px solid rgb(142, 210, 222, 0.5);
   margin-left: 22em;
   padding-left: 1em;
+  padding-right: 15em;
   text-align: left;
   height: auto;
-  width: 65%;
+  width: auto;
 }
 .tempHeaderDiv {
   height: 5.5em;
@@ -174,6 +175,10 @@ a {
   text-decoration: underline;
   cursor: pointer;
 }
+.mailToLink {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 @media (max-width: 1700px) {
   .tempHeaderDiv {
     height: 4.5em;
@@ -181,10 +186,13 @@ a {
   .tempHeader {
     font-size: 3.5em;
   }
+  .content {
+    padding-right: 10em;
+  }
 }
 @media (max-width: 1600px) {
   .content {
-    width: 60%;
+    padding-right: 8em;
   }
   .tempHeaderDiv {
     height: 3.5em;
@@ -207,7 +215,7 @@ a {
     font-size: 2em;
   }
   p { 
-    font-size: 26px;
+    font-size: 30px;
   }
   .technologyIcon img {
     margin: 0.6em;
@@ -216,44 +224,47 @@ a {
 }
 @media (max-width: 1100px) {
   .content {
-    width: 55%;
-  }
-}
-@media (max-width: 1025px) {
-  .content {
-    width: 50%;
-  }
-  .tempHeaderDiv {
-    height: 2.5em;
-  }
-  .tempHeader {
-    font-size: 1.5em;
-  }
-}
-@media (max-width: 1000px) {
-  .content {
-    width: 60%;
-  }
-  .content {
+    padding-right: 6em;
     margin-left: 11em;
   }
+  .tempHeaderDiv {
+    height: 3em;
+  }
+  .tempHeader {
+    font-size: 2em;
+  }
 }
-@media (max-width: 860px) {
-
+@media (max-width: 920px) {
+  .content {
+    padding-right: 4em;
+  }
+}
+@media (max-width: 867px) {
+  .content {
+    padding-right: 2em;
+  }
+  .tempHeaderDiv {
+    height: 3em;
+  }
+  .tempHeader {
+    font-size: 1.7em;
+  }
+  p { 
+    font-size: 30px;
+  }
 }
 @media (max-width: 768px) {
   .content {
     margin-left: 3em;
-    width: 85%;
   }
   .technologyIcon img {
     margin: 0.4em;
     height: 70px;
   }
 }
-@media (max-width: 510px) {
+@media (max-width: 575px) {
   .content {
-    width: 70%;
+    padding-right: 1.5em;
   }
   .tempHeaderDiv {
     height: 6.5em;
@@ -262,18 +273,21 @@ a {
     font-size: 2.5em;
   }
   p { 
-    font-size: 25px;
+    font-size: 35px;
   }
   .technologySection {
     margin-bottom: 1em;
   }
 }
 @media (max-width: 440px) {
-  .about {
-    width: 100%;
+  .tempHeaderDiv {
+    height: 4em;
   }
-  .content {
-    width: 100%;
+  .tempHeader {
+    font-size: 1.5em;
+  }
+  p { 
+    font-size: 25px;
   }
 }
 @media (max-width: 350px) {
