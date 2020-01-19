@@ -5,27 +5,26 @@
     <div class="content">
       <div class="projectsPageHeader">
         <h2>Projects.</h2>
-        <p>A collection of my favorite works. Enjoy!</p>
+        <p>A collection of my personal works. Enjoy!</p>
       </div>
       
       <div class="projectItemDiv" 
         v-for="project in projectItems" 
         v-bind:style='{ backgroundImage: `url("${project.imgUrl}")` }'
         v-bind:key="project.name">
-        <h2 class="projectDivTitle">
+        <div class="projectDivTitle">
           {{project.name}}
-        </h2>
+        </div>
         <div class="projectPreview">
-          <p>
+          <div class="previewDescription">
             {{project.desc}}
-          </p>
+          </div>
           <div class="technologyItemsDiv">
             <div class="technologyItem" v-for="techItem in project.tech" v-bind:key="techItem">
               {{techItem}}
             </div>
           </div>
         </div>
-        {{project.imgUrl}}
 
         <!--
         <ProjectDetails
@@ -61,10 +60,10 @@
         projectItems: [
           {
             name: 'Otherside',
-            desc: 'Spotify playlist generator based on shows happening in various locations',
+            desc: 'Spotify playlist generator based on live shows in various locations',
             info: "<p>Whenever I find a new artist I like - whether from a local show or a music festival, I love going on a music binge-spree for the next week or so, and adding them to my eternal music collection. Of course I'm not the only one that does this, but I definitely love discoverinig new music! Now, there are shows all across the US - and there's only one of me. How can I discover new artists playing shows if I'm not there?</p> <p>Otherside (rightfully named after the Red Hot Chili Pepper's hit song) aims to help me, and others like me out by consolidating songs based on live shows happening today across the US, and putting them into a Spotify playlist. It makes use of the Spotify and Seatgeek APIs to accomplish this task. It's simple - just pick some cities, pick some genres, log in and build a playlst.</p>",
             tech: ['Go', 'Redis', 'JavaScript/TypeScript', 'Vue', 'Jest'],
-            imgUrl: require('../assets/otherside.jpg'),
+            imgUrl: require('../assets/otherside.png'),
             projectLinks: [
               {name: 'Full Site', url: 'https://bransgithub.github.io/otherside'}, 
               {name: 'Source Code', url: 'https://github.com/bransgithub/otherside'}]
@@ -74,7 +73,7 @@
             desc: 'Daily dashboard web application to display weather, commute and calendar info',
             info: "",
             tech: ['C#', 'MongoDB', 'JavaScript/TypeScript', 'Angular', 'NUnit'],
-            imgUrl: '../assets/rooster.png',
+            imgUrl: require('../assets/rooster.png'),
             projectLinks: [
               {name: 'Source Code', url: 'https://github.com/bransgithub/rooster'}
             ]
@@ -84,7 +83,7 @@
             desc: 'Desktop app to keep track of daily and weekly hours spent on different tasks',
             info: "",
             tech: ['C#/WPF', 'SQL Server', 'MSTest'],
-            imgUrl: '../assets/clairvoyance.png',
+            imgUrl: require('../assets/clairvoyance.png'),
             projectLinks: [
               {name: 'Source Code', url: 'https://github.com/bransgithub/Clairvoyance'}
             ]
@@ -94,7 +93,7 @@
             desc: 'Open source project that delivers online education to low-resource communities',
             info: "",
             tech: ['Python/Django', 'SQL', 'JavaScript/TypeScript', 'Vue', 'Jest'],
-            imgUrl: '../assets/kolibri.png',
+            imgUrl: require('../assets/kolibri.png'),
             projectLinks: [
               {name: 'Kolibri\'s Website', url: 'https://learningequality.org/kolibri/'},
               {name: 'Kolbri\'s Source Code', url: 'https://github.com/learningequality/kolibri'},
@@ -105,7 +104,7 @@
             desc: 'Tutorial to set up a Continuous Integration system with Jenkins, LabVIEW, and GitHub',
             info: "",
             tech: ['Jenkins', 'LabVIEW'],
-            imgUrl: '../assets/jenkins-labview.png',
+            imgUrl: require('../assets/jenkins-labview.png'),
             projectLinks: [
               {name: 'Tutorial', url: 'https://jenkins.io/doc/tutorials/build-a-labview-app/'}
             ]
@@ -148,11 +147,13 @@ p {
 .projectItemDiv {
   width: 100%;
   height: 10em;
-  border: 1px solid black;
+  border: 1px solid transparent;
   border-radius: 20px;
   margin-bottom: 2em;
   text-align: center;
   cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .projectItemDiv:hover .projectDivTitle {
@@ -162,18 +163,31 @@ p {
   display: block;
 }
 .projectDivTitle {
+  color: white;
   font-size: 45px;
-  margin-top: 1.9em;
+  margin-top: 2em;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 .projectPreview {
   display: none;
-  text-align: left;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5em 2em;
+  border-radius: 20px;
+  height: 10em;
+}
+.previewDescription {
+  font-size: 30px;
+  color: white;
 }
 .technologyItemsDiv {
   margin: 0.3em;
+  margin-left: 0;
 }
 .technologyItem {
-  border: 1px solid black;
+  background-color: white;
+  border: 1px solid transparent;
   border-radius: 20px;
   font-family: 'Kanit', sans-serif;
   display: inline-block;
