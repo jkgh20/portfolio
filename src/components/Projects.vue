@@ -235,6 +235,11 @@ p {
     font-size: 30px;
   }
 }
+@media (max-width: 1230px) {
+  .projectItemDiv {
+    pointer-events: none;
+  }
+}
 @media (max-width: 1100px) {
   .content {
     padding-right: 6em;
