@@ -65,8 +65,7 @@
           ['Responsive ', 'frontends.'],
           ['Robust ', 'backends.'],
           ['Really bad', 'jokes.'],
-          ['Brandon', 'Nguyen.'],
-          ['Responsive ', 'frontends.']
+          ['Brandon', 'Nguyen.']
         ],
         currentMessageBeginning: null,
         currentMessageEnd: null,
