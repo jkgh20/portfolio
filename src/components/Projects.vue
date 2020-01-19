@@ -214,6 +214,14 @@ p {
   padding: 0.3em 0.5em;
   margin: 0.2em 0.3em;
 }
+@media (hover: none) {
+  .projectDivTitle {
+    display: block;
+  }
+  .projectPreview {
+    display: none;
+  }
+}
 @media (max-width: 1700px) {
   .content {
     padding-right: 10em;
@@ -233,11 +241,6 @@ p {
   }
   p { 
     font-size: 30px;
-  }
-}
-@media (max-width: 1230px) {
-  .projectItemDiv {
-    pointer-events: none;
   }
 }
 @media (max-width: 1100px) {
