@@ -175,13 +175,6 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-.projectItemDiv:hover .projectDivTitle {
-  display: none;
-}
-.projectItemDiv:hover .projectPreview {
-  display: block;
-}
 .projectDivTitle {
   color: white;
   font-size: 45px;
@@ -214,12 +207,12 @@ p {
   padding: 0.3em 0.5em;
   margin: 0.2em 0.3em;
 }
-@media (hover: none) {
-  .projectDivTitle {
-    display: block;
-  }
-  .projectPreview {
+@media (hover: hover) {
+  .projectItemDiv:hover .projectDivTitle {
     display: none;
+  }
+  .projectItemDiv:hover .projectPreview {
+    display: block;
   }
 }
 @media (max-width: 1700px) {
