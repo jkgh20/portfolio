@@ -76,13 +76,13 @@
 }
 .routeLink {
   display: inline;
-  margin: 0 1.5em 0 1.5em;
+  margin: 0 1em 0 1em;
   font-family: 'Ubuntu', sans-serif;
   cursor: pointer;
   font-size: 42px;
 }
 p {
-  font-size: 35px;
+  font-size: 25px;
 }
 .highlight {
   font-weight: bold;
@@ -93,12 +93,12 @@ p {
 }
 .mediaLink {
   display: inline;
-  margin: 0 0.5em 0 0.5em;
+  margin: 0 1em 0 1em;
 }
 .linkedin-img {
   margin-top: 10px;
-  height: 130px;
-  width: 500px;
+  height: 50px;
+  width: 200px;
 }
 .linkedin-icon {
   height: 180px;
@@ -106,8 +106,8 @@ p {
   display: none;
 }
 .github-img {
-  height: 160px;
-  width: 500px;
+  height: 80px;
+  width: 200px;
 }
 .github-icon {
   background-color: black;
