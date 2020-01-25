@@ -150,7 +150,7 @@ a {
   height: 5.5em;
 }
 .tempHeader {
-  font-size: 4em;
+  font-size: 3.2em;
 }
 .tempHeaderBeginning {
   color: rgb(51, 186, 210);
@@ -188,7 +188,7 @@ a {
     height: 4.5em;
   }
   .tempHeader {
-    font-size: 3.5em;
+    font-size: 3em;
   }
   .content {
     padding-right: 10em;
