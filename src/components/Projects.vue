@@ -95,7 +95,7 @@
           {
             name: 'Kolibri',
             desc: 'Open source project that delivers online education to low-resource communities',
-            info: "<p>Kolibri is an offline app that lets users download educational material (e.g. Khan Academy courses) and share them with others. This makes it especially useful in low-resource communitites like rural schools, orphanages, and prisons. Inspired by their mission of making education more widely available, I started conributing to the app, primarily on the UX.</p>",
+            info: "<p>Kolibri is an offline app that lets users download educational material (e.g. Khan Academy courses) and share them with others. This makes it especially useful in low-resource communitites like rural schools, orphanages, and prisons. Inspired by their mission of making education more widely available, I started contributing to the app, primarily on the UX.</p>",
             tech: ['Python/Django', 'SQL', 'JavaScript/TypeScript', 'Vue', 'Jest'],
             imgUrl: require('../assets/kolibri.png'),
             projectLinks: [
