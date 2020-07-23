@@ -12,10 +12,10 @@
 
       <transition name="slide-down">
         <div class="introSection transitionDiv" v-if="bodySections[0]">
-          <p>My name is Brandon, and I'm a full stack developer in Austin, TX. 
-            I hail from the mountainous lands of Virginia, where I graduated from Virginia Tech 
+          <p>My name is Brandon, and I'm a full stack developer in Austin, TX.
+            I hail from the mountainous lands of Virginia, where I graduated from Virginia Tech
             with a degree in Mechanical Engineering.</p>
-          <p>Slowly but surely, I realised that working with software was what I wanted to do - I followed the so-called 
+          <p>Slowly but surely, I realised that working with software was what I wanted to do - I followed the so-called
             'compass of my dreams' and ended up in Austin, TX! I've been working primarily on financial software at work, but am always happy to explore new things.</p>
         </div>
       </transition>
@@ -41,7 +41,7 @@
           </p>
           <p>
             Want to get in touch? You can reach me at <a class="mailToLink" href="mailto:brandon.dt.nguyen@gmail.com">brandon.dt.nguyen@gmail.com</a>. I'll respond as soon as possible.
-            In the meantime, why not check out some of my <span class="projectsLink" @click="changeRoute('Projects')">personal projects</span>? 
+            In the meantime, why not check out some of my <span class="projectsLink" @click="changeRoute('Projects')">personal projects</span>?
           </p>
         </div>
       </transition>
@@ -84,17 +84,17 @@
           require('../assets/typescript.png'),
           require('../assets/vue.png'),
           require('../assets/python.png'),
-          require('../assets/jenkins.png'),
           require('../assets/html.png'),
-          require('../assets/css.png')
+          require('../assets/css.png'),
+          require('../assets/jenkins.png')
         ]
       }
     },
     mounted() {
       window.scrollTo(0,0);
-      
+
       var self = this;
-      
+
       this.landingMessages.forEach(function(message, index) {
         var transitionInTimeMS = 2000 * index;
         var transitionOutTimeMS = transitionInTimeMS + 1500;
@@ -204,7 +204,7 @@ a {
   .tempHeader {
     font-size: 2.5em;
   }
-  p { 
+  p {
     font-size: 30px;
   }
 }
@@ -218,7 +218,7 @@ a {
   .tempHeader {
     font-size: 2em;
   }
-  p { 
+  p {
     font-size: 30px;
   }
   .technologyIcon img {
@@ -253,7 +253,7 @@ a {
   .tempHeader {
     font-size: 1.7em;
   }
-  p { 
+  p {
     font-size: 30px;
   }
 }
@@ -276,7 +276,7 @@ a {
   .tempHeader {
     font-size: 2.5em;
   }
-  p { 
+  p {
     font-size: 35px;
   }
   .technologySection {
@@ -290,7 +290,7 @@ a {
   .tempHeader {
     font-size: 1.5em;
   }
-  p { 
+  p {
     font-size: 25px;
   }
 }
