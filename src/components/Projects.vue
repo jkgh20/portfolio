@@ -2,7 +2,7 @@
   <div class="projectsBody">
     <Sidenav></Sidenav>
 
-    <ProjectDetails 
+    <ProjectDetails
       v-for="project in projectItems"
       v-bind:key="`${project.name}-details`"
       :ref = "project.name + 'modal'"
@@ -21,9 +21,9 @@
           <p>A collection of my personal works. Enjoy!</p>
         </div>
       </transition>
-      
-      <div class="projectItemDiv" 
-        v-for="project in projectItems" 
+
+      <div class="projectItemDiv"
+        v-for="project in projectItems"
         v-bind:style='{ backgroundImage: `url("${project.imgUrl}")` }'
         v-bind:key="`${project.name}-projectItem`"
         @click="openModal(`${project.name}modal`)">
@@ -65,17 +65,17 @@
           {
             name: 'Otherside',
             desc: 'Spotify playlist generator based on live shows in various locations',
-            info: "<p>Whenever I find a new artist I like - whether from a local show or a music festival, I love going on a music binge-spree for the next week or so, and adding them to my eternal music collection. Of course I'm not the only one that does this, but I definitely love discoverinig new music! Now, there are shows all across the US - and there's only one of me. How can I discover new artists playing shows if I'm not there?</p> <p>Otherside (rightfully named after the Red Hot Chili Pepper's hit song) aims to help me, and others like me out by consolidating songs based on live shows happening today across the US, and putting them into a Spotify playlist. It makes use of the Spotify and Seatgeek APIs to accomplish this task. It's simple - just pick some cities, pick some genres, log in and build a playlist.</p>",
+            info: "<p>Whenever I find a new artist I like - whether from a local show or a music festival, I love going on a music binge-spree for the next week or so, and adding them to my eternal music collection. Of course I'm not the only one that does this, but I definitely love discovering new music! Now, there are shows all across the US - and there's only one of me. How can I discover new artists playing shows if I'm not there?</p> <p>Otherside (rightfully named after the Red Hot Chili Pepper's hit song) aims to help me, and others like me out by consolidating songs based on live shows happening today across the US, and putting them into a Spotify playlist. It makes use of the Spotify and Seatgeek APIs to accomplish this task. It's simple - just pick some cities, pick some genres, log in, and build a playlist.</p>",
             tech: ['Go', 'Redis', 'JavaScript/TypeScript', 'Vue', 'Jest'],
             imgUrl: require('../assets/otherside.png'),
             projectLinks: [
-              {name: 'Full Site', url: 'https://bransgithub.github.io/otherside'}, 
+              {name: 'Full Site', url: 'https://bransgithub.github.io/otherside'},
               {name: 'Source Code', url: 'https://github.com/bransgithub/otherside'}]
           },
           {
             name: 'Rooster',
-            desc: 'Daily dashboard to display weather, commute and calendar info',
-            info: "<p>Our time in the morning is precious - every second counts! I'll find myself checking the weather, what meetings/obligations I have for the day, and even my commute - maybe there's a traffic jam on the highway and I should go a different route? Routine is great, but is there a way I can see everything I need in the morning and save some time?</p><p>Rooster is a web application that consolidates all this information for me, taking weather data from the Dark Sky API, checking commute times from the Bing Distance API, and calendar information from the google calendar API. It lets the user configure what they want to see, and how they want to see it. </p>",
+            desc: 'Daily dashboard to display weather, commute, and calendar info',
+            info: "<p>Our time in the morning is precious - every second counts! I'll find myself checking the weather, what meetings/obligations I have for the day, and even my commute - maybe there's a traffic jam on the highway and I should go a different route? Routine is great, but is there a way I can see everything I need in the morning and save some time?</p><p>Rooster is a web application that consolidates all this information for me, taking weather data from the Dark Sky API, checking commute times from the Bing Distance API, and calendar information from the Google Calendar API. It lets the user configure what they want to see, and how they want to see it. </p>",
             tech: ['C#', 'MongoDB', 'JavaScript/TypeScript', 'Angular', 'NUnit'],
             imgUrl: require('../assets/rooster.png'),
             projectLinks: [
@@ -85,7 +85,7 @@
           {
             name: 'Clairvoyance',
             desc: 'Desktop app to keep track of daily and weekly hours spent on different tasks',
-            info: "<p>At the end of every work week, many people get the absolute please of putting tasks into their timecard. During my time at National Instruments, I personally got to enjoy twice the amount - those for the general HR entries, and those for our entries into Microsoft Azure. It might take me 15 minutes every week to scramble through my notes and calendar just for this task.</p><p>By creating Clairvoyance, I was able to enter tasks into one place as I did them, and forget about them until Friday. Then I pull up my generated time report and - type type type - I'm done with my work week!</p>",
+            info: "<p>At the end of every work week, many people get the absolute pleasure of putting tasks into their timecard. During my time at National Instruments, I personally got to enjoy twice the amount - those for the general HR entries, and those for our entries into Microsoft Azure. It might take me 15 minutes every week to scramble through my notes and calendar just for this task.</p><p>By creating Clairvoyance, I was able to enter tasks into one place as I did them, and forget about them until Friday. Then I pull up my generated time report and - type type type - I'm done with my work week!</p>",
             tech: ['C#/WPF', 'SQL Server', 'MSTest'],
             imgUrl: require('../assets/clairvoyance.png'),
             projectLinks: [
@@ -224,7 +224,7 @@ p {
   .content {
     padding-right: 8em;
   }
-  p { 
+  p {
     font-size: 30px;
   }
 }
@@ -232,7 +232,7 @@ p {
   .content {
     margin-left: 16em;
   }
-  p { 
+  p {
     font-size: 30px;
   }
 }
@@ -251,7 +251,7 @@ p {
   .content {
     padding-right: 2em;
   }
-  p { 
+  p {
     font-size: 30px;
   }
 }
@@ -264,7 +264,7 @@ p {
   .content {
     padding-right: 1.5em;
   }
-  p { 
+  p {
     font-size: 35px;
   }
 }
